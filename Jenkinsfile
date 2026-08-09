@@ -2,36 +2,19 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Credentials Test') {
             steps {
-                echo 'Hello Sonal'
+                withCredentials([
+                    usernamePassword(
+                        credentialsId: 'sonal-demo-creds',
+                        usernameVariable: 'MY_USER',
+                        passwordVariable: 'MY_PASS'
+                    )
+                ]) {
+                    echo "Username is: ${MY_USER}"
+                    echo "Password is stored securely"
+                }
             }
-        }
-
-        stage('Test') {
-            steps {
-                echo 'Testing Application'
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                echo 'Deploying Application'
-            }
-        }
-    }
-
-    post {
-        success {
-            echo 'Pipeline Successful'
-        }
-
-        failure {
-            echo 'Pipeline Failed'
-        }
-
-        always {
-            echo 'Pipeline Finished'
         }
     }
 }
