@@ -34,6 +34,7 @@ pipeline {
             steps {
                 echo "Application: ${APP_NAME}"
                 echo "Environment: ${ENVIRONMENT}"
+                echo "Selected Environment: ${params.ENVIRONMENT}"
                 echo "Build Number: ${BUILD_NUMBER}"
                 echo "Job Name: ${JOB_NAME}"
                 echo "Workspace: ${WORKSPACE}"
