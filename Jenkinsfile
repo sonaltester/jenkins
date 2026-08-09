@@ -7,11 +7,11 @@ pipeline {
                 withCredentials([
                     usernamePassword(
                         credentialsId: 'sonal-demo-creds',
-                        usernameVariable: 'MY_USER',
-                        passwordVariable: 'MY_PASS'
+                        usernameVariable: 'sonal',
+                        passwordVariable: 'sonal@2005'
                     )
                 ]) {
-                    echo "Username is: ${MY_USER}"
+                    echo "Username is: ${sonal}"
                     echo "Password is stored securely"
                 }
             }
