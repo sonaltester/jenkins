@@ -6,7 +6,7 @@ pipeline {
             steps {
                 withCredentials([
                     usernamePassword(
-                        credentialsId: 'sonal-demo-creds',
+                        credentialsId: 'sonal_Tester',
                         usernameVariable: 'sonal',
                         passwordVariable: 'sonal@2005'
                     )
