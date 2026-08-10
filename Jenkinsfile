@@ -45,6 +45,16 @@ pipeline {
                 echo "Application Name: ${params.APP_NAME}"
             }
         }
+        stage('Test') {
+            when {
+                expression {
+                    params.RUN_TESTS
+                }
+            }
+            steps {
+                echo 'Testing Application'
+            }
+        }
         
         }
     
