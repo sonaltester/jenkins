@@ -20,7 +20,7 @@
 //     }
 // }
 
-// ------------------------------------------enviroment varibale -------------------------
+// ------------------------------------------enviroment varibale/Build parameter -------------------------
 pipeline {
     agent any
 
@@ -34,11 +34,16 @@ pipeline {
             steps {
                 echo "Application: ${APP_NAME}"
                 echo "Environment: ${ENVIRONMENT}"
-                echo "Selected Environment: ${params.ENVIRONMENT}"
+                echo "Selected Environment: ${params.ENVIRONMENT}" //ye add karke build parameter ka value show karenge
                 echo "Build Number: ${BUILD_NUMBER}"
                 echo "Job Name: ${JOB_NAME}"
                 echo "Workspace: ${WORKSPACE}"
             }
+            stage('Show Application') {
+                    steps {
+                        echo "Application Name: ${params.APP_NAME}"
+                    }
+}
         }
     }
 }
