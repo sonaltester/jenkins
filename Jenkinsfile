@@ -39,11 +39,13 @@ pipeline {
                 echo "Job Name: ${JOB_NAME}"
                 echo "Workspace: ${WORKSPACE}"
             }
-            stage('Show Application') {
-                    steps {
-                        echo "Application Name: ${params.APP_NAME}"
-                    }
-}
         }
-    }
+        stage('Show Application') {
+            steps {
+                echo "Application Name: ${params.APP_NAME}"
+            }
+        }
+        
+        }
+    
 }
