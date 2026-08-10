@@ -38,7 +38,7 @@ pipeline {
                 echo "Build Number: ${BUILD_NUMBER}"
                 echo "Job Name: ${JOB_NAME}"
                 echo "Workspace: ${WORKSPACE}"
-                echo "hello"
+                echo "hii"
             }
         }
         stage('Show Application') {
