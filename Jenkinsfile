@@ -59,7 +59,7 @@ pipeline {
 
         stage('Test run ') {
             steps {
-                bat 'mvn tests'
+                bat 'mvn test'
             }
         }
         
