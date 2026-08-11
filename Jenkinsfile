@@ -56,6 +56,12 @@ pipeline {
                 echo 'Testing Application'
             }
         }
+
+        stage('Test') {
+            steps {
+                bat 'mvn test......'
+            }
+        }
         
         }
     
