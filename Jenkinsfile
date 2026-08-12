@@ -67,7 +67,23 @@ pipeline {
                 bat 'mvn  clean package'
             }
         }
-        
+
+        post {
+            success {
+                archiveArtifacts artifacts: 'target/*.jar'
+                echo 'Pipeline Successful'
+            }
+
+            failure {
+                echo 'Pipeline Failed'
+            }
+
+            always {
+                echo 'Pipeline Finished'
+            }
+        }
+
+
         }
     
 }
