@@ -62,6 +62,11 @@ pipeline {
                 bat 'mvn test'
             }
         }
+        stage('Build'){
+            step{
+                bat 'mvn  clean package'
+            }
+        }
         
         }
     
