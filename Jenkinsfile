@@ -57,13 +57,13 @@ pipeline {
             }
         }
 
-        stage('Test run ') {
+        stage('Test run') {
             steps {
                 bat 'mvn test'
             }
         }
         stage('Build'){
-            step{
+            steps{
                 bat 'mvn  clean package'
             }
         }
