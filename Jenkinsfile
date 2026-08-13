@@ -67,6 +67,11 @@ pipeline {
                 bat 'mvn  clean package'
             }
         }
+        stage('Publish Test Report') {
+            steps {
+                junit 'target/surefire-reports/*.xml'
+            }
+        }
 
 }
         post {
